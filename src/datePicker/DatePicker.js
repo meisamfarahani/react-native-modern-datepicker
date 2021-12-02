@@ -158,6 +158,7 @@ DatePicker.propTypes = {
   selectorEndingYear: PropTypes.number,
   disableDateChange: PropTypes.bool,
   isGregorian: PropTypes.bool,
+  includeTime: PropTypes.bool,
   configs: PropTypes.object,
   reverse: PropTypes.oneOf([true, false, 'unset']),
   options: PropTypes.shape(optionsShape),
