@@ -68,7 +68,7 @@ const DatePicker = props => {
           <React.Fragment>
             <Calendar />
             <SelectMonth />
-            <SelectTime />
+            {props.includeTime && <SelectTime />}
           </React.Fragment>
         );
       case 'calendar':
