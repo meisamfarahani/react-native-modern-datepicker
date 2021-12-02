@@ -14,6 +14,7 @@ const Header = ({changeMonth}) => {
     maximumDate,
     isGregorian,
     mode,
+    includeTime,
   } = useCalendar();
   const [mainState, setMainState] = state;
   const style = styles(options);
@@ -80,7 +81,7 @@ const Header = ({changeMonth}) => {
               {utils.getMonthYearText(mainState.activeDate).split(' ')[1]}
             </Text>
           </TouchableOpacity>
-          {mode === 'datepicker' && (
+          {mode === 'datepicker' && includeTime && (
             <TouchableOpacity
               activeOpacity={0.7}
               style={[
@@ -107,7 +108,7 @@ const Header = ({changeMonth}) => {
           ]}>
           <Text style={style.headerText}>{utils.getMonthYearText(lastDate).split(' ')[0]}</Text>
           <Text style={style.headerText}>{utils.getMonthYearText(lastDate).split(' ')[1]}</Text>
-          {mode === 'datepicker' && (
+          {mode === 'datepicker' && includeTime && (
             <Text style={style.headerText}>
               {utils.toPersianNumber(utils.getTime(mainState.activeDate))}
             </Text>
